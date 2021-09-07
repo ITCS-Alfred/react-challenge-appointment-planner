@@ -26,6 +26,7 @@ export const ContactsPage = ({ contacts, addContact}) => {
      setName("");
      setPhone("");
    }
+  }
 
    useEffect(() => {
    const nameIsDuplicate = () => {
@@ -56,4 +57,4 @@ export const ContactsPage = ({ contacts, addContact}) => {
       </section>
     </div>
   );
-  }
+  };
