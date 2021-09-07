@@ -1,10 +1,12 @@
 import React from "react";
+import App from "../../App";
 
 export const ContactsPage = () => {
   /*
   Define state variables for 
   contact info and duplicate check
   */
+  const contactInfo = addContact();
 
   const handleSubmit = (e) => {
     e.preventDefault();
