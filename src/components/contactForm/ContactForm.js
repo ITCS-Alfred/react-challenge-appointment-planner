@@ -18,22 +18,19 @@ export const ContactForm = ({
       className="name"
       type="text"
       onChange={(e) => setName(e.target.value)}
-      {required: true};
       />
       <input  
       value={phone}
       onChange={(e) => setPhone(e.target.value)}
       className="phone"
       type="tel"
-      pattern="^[2-9]\d{2}-\d{3}-\d{4}$"
-      {required: true};
+      pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
       />
        <input  
        value={email}
       className="email"
       type="email"
       onChange={(e) => setEmail(e.target.value)}
-      {required: true};
       />
       <input
       type="submit"
