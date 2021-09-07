@@ -18,16 +18,17 @@ export const ContactsPage = ({ contacts, addContact}) => {
     if the contact name is not a duplicate
     */
    const {name, phone, email} = e;
-   if(name === contacts.name) {
+   const duplicateChecker = contacts.filter(contact => contact.name === name);
+   if(duplicateChecker === true){
      e.preventDefault();
      alert("Name already exists!");
-   } else { 
-     setName(contacts.concat(name));
    }
-   //clear the values
-   setEmail("");
-   setName("");
-   setPhone("");
+   else { 
+     addContact(name, email, phone);
+    //clear the values
+    setEmail("");
+    setName("");
+    setPhone("");
   };
 
   /*
