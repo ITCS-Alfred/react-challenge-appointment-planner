@@ -13,7 +13,7 @@ function App(props) {
       name:"",
       phoneNumber: "",
       email: ""
-    };
+    },
   ]);
   const [appointments, setAppointments] = useState([
     {
@@ -21,7 +21,7 @@ function App(props) {
       contact: "",
       date: "",
       time: ""
-    };
+    },
   ]);
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -33,19 +33,24 @@ function App(props) {
   contacts and appointments
   */
 
-  const addContact = [
+  const addContact = (name, phone, email) => {
+    setContacts(
+   [
     ...contacts,
 
     {
       name: "",
       phoneNumber: "",
       email: ""
-    }
-  ];
+    },
+  ],
+    )
+};
 
-  setContacts(addContact);
 
-  const addAppointment = [
+  const addAppointment = (title, contact, date, time) => {
+    setAppointments(
+   [
     ...appointments,
 
     {
@@ -53,10 +58,8 @@ function App(props) {
       contact: "",
       date: "",
       time: ""
-    }
-  ];
-
-  setAppointments(addAppointment);
+    },
+  ]);
 
   }
 

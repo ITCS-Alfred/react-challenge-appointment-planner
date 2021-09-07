@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState} from "react";
 import App from "../../App";
 
-export const ContactsPage = () => {
+export const ContactsPage = ({ contacts, addContact}) => {
   /*
   Define state variables for 
   contact info and duplicate check
   */
-  const contactInfo = addContact();
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [duplicate, setDuplicate] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
+   const {name, phone, email} = e;
+   if(name === contacts.name) {
+     e.preventDefault();
+     alert("Name already exists!");
+   } else { 
+     setName(contacts.concat(name));
+   }
   };
 
   /*
