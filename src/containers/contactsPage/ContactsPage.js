@@ -18,7 +18,7 @@ export const ContactsPage = ({ contacts, addContact}) => {
     if the contact name is not a duplicate
     */
    const {name, phone, email} = e;
-   const duplicateChecker = contacts.filter(contact => contact.name === name);
+   const duplicateChecker = contacts.map(contact => contact.name === name);
    if(duplicateChecker === true){
      e.preventDefault();
      alert("Name already exists!");
@@ -50,4 +50,4 @@ export const ContactsPage = ({ contacts, addContact}) => {
       </section>
     </div>
   );
-};
+  }
