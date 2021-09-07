@@ -1,5 +1,6 @@
 import React, { useState} from "react";
-import App from "../../App";
+import { ContactForm } from "../../components/contactForm/ContactForm";
+import { TileList } from "../../components/tileList/TileList"; 
 
 export const ContactsPage = ({ contacts, addContact}) => {
   /*
@@ -9,7 +10,7 @@ export const ContactsPage = ({ contacts, addContact}) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [duplicate, setDuplicate] = useState(false);
+  
 
   const handleSubmit = (e) => {
     /*
@@ -23,6 +24,10 @@ export const ContactsPage = ({ contacts, addContact}) => {
    } else { 
      setName(contacts.concat(name));
    }
+   //clear the values
+   setEmail("");
+   setName("");
+   setPhone("");
   };
 
   /*
@@ -34,10 +39,13 @@ export const ContactsPage = ({ contacts, addContact}) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
+        <ContactForm name={name} phone={phone} email={email} setName={setName} setPhone={setPhone} 
+        setEmail={setEmail} handleSubmit={handleSubmit} />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <tileList contactArray={contacts} />
       </section>
     </div>
   );

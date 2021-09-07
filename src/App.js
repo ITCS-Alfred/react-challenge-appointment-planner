@@ -3,7 +3,7 @@ import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
-function App(props) {
+export default function App(props) {
   /*
   Define state variables for 
   contacts and appointments 
@@ -91,4 +91,4 @@ function App(props) {
   );
 }
 
-export default App;
+
